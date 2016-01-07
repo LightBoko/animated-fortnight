@@ -1,8 +1,8 @@
 package org.usfirst.frc.team2557.robot;
 
-import edu.wpi.first.wpilibj.RobotDrive;
-import edu.wpi.first.wpilibj.SpeedController;
-import edu.wpi.first.wpilibj.Talon;
+import edu.wpi.first.wpilibj.*;
+
+
 
 /**
  * The RobotMap is a mapping from the ports sensors and actuators are wired into
@@ -16,7 +16,14 @@ public class RobotMap {
 	public static SpeedController backLeft;
 	public static SpeedController frontRight;
 	public static SpeedController backRight;
+	public static SpeedController intakeMotor;
 	public static RobotDrive robotDrive;
+	public static DoubleSolenoid intakeArm;
+	public static DoubleSolenoid winchLock;
+	public static DoubleSolenoid superShifter;
+	public static Counter encoderLeftDrive;
+	public static Counter encoderRightDrive;
+	public static Counter encoderWinch;
     // For example to map the left and right motors, you could define the
     // following variables to use with your drivetrain subsystem.
     // public static int leftMotor = 1;
@@ -32,7 +39,13 @@ public class RobotMap {
 		frontRight = new Talon(2);
 		backRight = new Talon(3);
 
-		winch = new Talon(4);
+		winch = new Talon(5);
+		
+		intakeMotor = new Talon(4);
+		
+		intakeArm = new DoubleSolenoid(0,2,3);
+		winchLock = new DoubleSolenoid(0,0,1);
+		superShifter = new DoubleSolenoid(0,4,5);
 		
 		robotDrive = new RobotDrive(frontLeft, backLeft, frontRight, backRight);
 		robotDrive.setSafetyEnabled(false);

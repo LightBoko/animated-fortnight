@@ -1,16 +1,15 @@
 package org.usfirst.frc.team2557.robot.commands;
 
 import org.usfirst.frc.team2557.robot.Robot;
-
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
  *
  */
-public class WinchCommand extends Command {
+public class IntakeCommand extends Command {
 
-    public WinchCommand() {
-    	requires(Robot.winchSubsystem);
+    public IntakeCommand() {
+    	requires(Robot.intakeSubsystem);
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
     }
@@ -21,7 +20,15 @@ public class WinchCommand extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.winchSubsystem.winch();
+    	if(Robot.oi.joystick.getRawButton(0)){
+    		Robot.intakeSubsystem.intake();
+    	}
+    	else if(Robot.oi.joystick.getRawButton(1)){
+    		Robot.intakeSubsystem.outtake();
+    	}
+    	else{
+    		Robot.intakeSubsystem.stop();
+    	}
     }
 
     // Make this return true when this Command no longer needs to run execute()

@@ -7,10 +7,9 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  *
  */
-public class WinchCommand extends Command {
+public class IntakeArmCommand extends Command {
 
-    public WinchCommand() {
-    	requires(Robot.winchSubsystem);
+    public IntakeArmCommand() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
     }
@@ -21,7 +20,12 @@ public class WinchCommand extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.winchSubsystem.winch();
+    	if(Robot.oi.joystick.getRawButton(2)){
+    		Robot.intakeArmSubsystem.armUp();
+    	}
+    	else if(Robot.oi.joystick.getRawButton(3)){
+    		Robot.intakeArmSubsystem.armDown();
+    	}
     }
 
     // Make this return true when this Command no longer needs to run execute()

@@ -40,10 +40,35 @@ public class OI {
 	public Joystick joystick2;
 	
 	public JoystickButton buttonOne;
+	public JoystickButton buttonTwo;
+	public JoystickButton buttonThree;
+	public JoystickButton buttonFour;
+	public JoystickButton buttonFive;
+	public JoystickButton buttonSix;
+	public JoystickButton buttonSeven;
+	public JoystickButton buttonEight;
+	public JoystickButton buttonNine;
+	public JoystickButton buttonTen;
+	public JoystickButton buttonEleven;
+	public JoystickButton buttonTwelve;
+	
 	public OI(){
 		joystick = new Joystick(0);
-		joystick = new Joystick(1);
-		buttonOne = new JoystickButton(joystick, 0);
+		joystick2 = new Joystick(1);
+		buttonOne = new JoystickButton(joystick,0);
+		buttonTwo = new JoystickButton(joystick,1);
+		buttonThree = new JoystickButton(joystick,2);
+		buttonFour = new JoystickButton(joystick,3);
+		buttonFive = new JoystickButton(joystick,4);
+		buttonSix = new JoystickButton(joystick,5);
+		buttonSeven = new JoystickButton(joystick,6);
+		buttonEight = new JoystickButton(joystick,7);
+		buttonNine = new JoystickButton(joystick,8);
+		buttonTen = new JoystickButton(joystick,9);
+		buttonEleven = new JoystickButton(joystick,10);
+		buttonTwelve = new JoystickButton(joystick,11);
+		
 		buttonOne.whenPressed(new WinchCommand());
-}
+		buttonTwo.whenPressed(new IntakeCommand());
+	}
 }

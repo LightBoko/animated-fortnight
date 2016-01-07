@@ -20,9 +20,18 @@ public class Robot extends IterativeRobot {
 	public static final ExampleSubsystem exampleSubsystem = new ExampleSubsystem();
 	Command autonomousCommand;
 	Command driveCommand;
+	Command intakeCommand;
+	Command intakeArmCommand;
+	Command winchLockCommand;
+	Command winchCommand;
+	Command superShifterCommand;
 	public static OI oi;
 	public static WinchSubsystem winchSubsystem;
 	public static DriveSubsystem driveSubsystem;
+	public static IntakeSubsystem intakeSubsystem;
+	public static IntakeArmSubsystem intakeArmSubsystem;
+	public static WinchLockSubsystem winchLockSubsystem;
+	public static SuperShifterSubsystem superShifterSubsystem;
 
 
 
@@ -32,6 +41,7 @@ public class Robot extends IterativeRobot {
      */
     public void robotInit() {
     	driveCommand = new DriveCommand();
+    	intakeCommand = new IntakeCommand();
 		oi = new OI();
         // instantiate the command used for the autonomous period
         autonomousCommand = new ExampleCommand();
@@ -75,6 +85,7 @@ public class Robot extends IterativeRobot {
     public void teleopPeriodic() {
         Scheduler.getInstance().run();
         driveCommand.start();
+        intakeCommand.start();
     }
     
     /**
