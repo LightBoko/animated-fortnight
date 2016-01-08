@@ -86,6 +86,9 @@ public class Robot extends IterativeRobot {
         Scheduler.getInstance().run();
         driveCommand.start();
         intakeCommand.start();
+        intakeArmCommand.start();
+        winchCommand.start();
+        superShifterCommand.start();
     }
     
     /**

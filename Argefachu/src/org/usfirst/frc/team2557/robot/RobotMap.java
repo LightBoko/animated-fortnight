@@ -11,6 +11,9 @@ import edu.wpi.first.wpilibj.*;
  * floating around.
  */
 public class RobotMap {
+	//Speed Controllers = Motors
+	//Counter = Encoders
+	//DoubleSolenoid = Pneumatic
 	public static SpeedController winch;
 	public static SpeedController frontLeft;
 	public static SpeedController backLeft;
@@ -34,17 +37,18 @@ public class RobotMap {
     // public static int rangefinderPort = 1;
     // public static int rangefinderModule = 1;
 	public static void init(){
+		//Drive Train:
 		frontLeft = new Talon(0);
 		backLeft = new Talon(1);
 		frontRight = new Talon(2);
 		backRight = new Talon(3);
-
+		//Winch:
 		winch = new Talon(5);
-		
-		intakeMotor = new Talon(4);
-		
-		intakeArm = new DoubleSolenoid(0,2,3);
 		winchLock = new DoubleSolenoid(0,0,1);
+		//Intake:
+		intakeMotor = new Talon(4);
+		intakeArm = new DoubleSolenoid(0,2,3);
+		//Supershifter:
 		superShifter = new DoubleSolenoid(0,4,5);
 		
 		robotDrive = new RobotDrive(frontLeft, backLeft, frontRight, backRight);

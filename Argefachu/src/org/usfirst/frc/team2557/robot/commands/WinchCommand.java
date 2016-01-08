@@ -1,7 +1,9 @@
 package org.usfirst.frc.team2557.robot.commands;
 
 import org.usfirst.frc.team2557.robot.Robot;
+import org.usfirst.frc.team2557.robot.RobotMap;
 
+import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
@@ -21,7 +23,13 @@ public class WinchCommand extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.winchSubsystem.winch();
+    	if(RobotMap.encoderWinch.get() > 0){
+    		Robot.winchSubsystem.winch();
+    	}
+    	RobotMap.winchLock.set(Value.kReverse);
+    	if(RobotMap.encoderWinch.get() < 510){
+    		Robot.winchSubsystem.winchDown();
+    	}
     }
 
     // Make this return true when this Command no longer needs to run execute()

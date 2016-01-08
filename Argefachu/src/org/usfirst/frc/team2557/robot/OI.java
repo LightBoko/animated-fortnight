@@ -69,6 +69,6 @@ public class OI {
 		buttonTwelve = new JoystickButton(joystick,11);
 		
 		buttonOne.whenPressed(new WinchCommand());
-		buttonTwo.whenPressed(new IntakeCommand());
+		buttonSix.whenPressed(new WinchLockCommand());
 	}
 }

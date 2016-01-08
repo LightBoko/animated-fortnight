@@ -18,8 +18,8 @@ public class DriveSubsystem extends Subsystem {
         // Set the default command for a subsystem here.
         //setDefaultCommand(new MySpecialCommand());
     }
-    public void tankDrive(){
-    	robotDrive.tankDrive(Robot.oi.joystick, Robot.oi.joystick2);
+    public void arcadeDrive(){
+    	robotDrive.arcadeDrive(Robot.oi.joystick2);
     }
 }
 

@@ -20,10 +20,10 @@ public class IntakeCommand extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	if(Robot.oi.joystick.getRawButton(0)){
+    	if(Robot.oi.joystick2.getRawButton(0)){
     		Robot.intakeSubsystem.intake();
     	}
-    	else if(Robot.oi.joystick.getRawButton(1)){
+    	else if(Robot.oi.joystick2.getRawButton(1)){
     		Robot.intakeSubsystem.outtake();
     	}
     	else{
