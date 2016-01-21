@@ -11,15 +11,15 @@ import edu.wpi.first.wpilibj.*;
  * floating around.
  */
 public class RobotMap {
-	//Speed Controllers = Motors
+	//CANTalons = Motors
 	//Counter = Encoders
-	//DoubleSolenoid = Pneumatic
-	public static SpeedController winch;
-	public static SpeedController frontLeft;
-	public static SpeedController backLeft;
-	public static SpeedController frontRight;
-	public static SpeedController backRight;
-	public static SpeedController intakeMotor;
+	//DoubleSolenoid = Pneumatic Pistons
+	public static CANTalon winch;
+	public static CANTalon frontLeft;
+	public static CANTalon backLeft;
+	public static CANTalon frontRight;
+	public static CANTalon backRight;
+	public static CANTalon intakeMotor;
 	public static RobotDrive robotDrive;
 	public static DoubleSolenoid intakeArm;
 	public static DoubleSolenoid winchLock;
@@ -38,15 +38,15 @@ public class RobotMap {
     // public static int rangefinderModule = 1;
 	public static void init(){
 		//Drive Train:
-		frontLeft = new Talon(0);
-		backLeft = new Talon(1);
-		frontRight = new Talon(2);
-		backRight = new Talon(3);
+		frontLeft = new CANTalon(0);
+		backLeft = new CANTalon(1);
+		frontRight = new CANTalon(2);
+		backRight = new CANTalon(3);
 		//Winch:
-		winch = new Talon(5);
+		winch = new CANTalon(5);
 		winchLock = new DoubleSolenoid(0,0,1);
 		//Intake:
-		intakeMotor = new Talon(4);
+		intakeMotor = new CANTalon(4);
 		intakeArm = new DoubleSolenoid(0,2,3);
 		//Supershifter:
 		superShifter = new DoubleSolenoid(0,4,5);
